@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  margin: 10px;
+  font-size: 1.50em;
+}
+
+header {
+  text-align: right;
+  border: 1px solid;
+}
+
+.return-address {
+  text-align: left;
+  float: right;
+}
+
+h1 {
+  clear: both;
+  font-weight: bold;
+  padding-top: 80px;
+}
+
+.adios {
+  float: right;
+  padding-top: 50px;
+}
