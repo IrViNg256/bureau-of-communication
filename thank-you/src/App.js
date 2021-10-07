@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header> 
+      <div className="headLeatter"> 
       <address className="return-address">
         Lopes de Almeido, Evanildo<br/>
         Bläsiring 161 <br/>
@@ -12,9 +12,9 @@ function App() {
       </address>
 
       <time datetime="2012-12-01">01 Dezember, 2012</time>
-    </header>
+    </div>
 
-    <h1>
+    <h1 className="titulo">
       Statement of Gratitude
     </h1>
 
