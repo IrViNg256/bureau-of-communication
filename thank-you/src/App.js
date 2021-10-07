@@ -1,89 +1,193 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [state, setState] = useState({
+    recipient: "",
+    action: "",
+    adjective: "",
+    virtue: "",
+    inferior: "",
+    superior: "",
+    complimentary: "",
+    title: "",
+    generosity: "",
+    relationship: "",
+    myName: "",
+  });
+
+  function handleSubmit(event) {
+    // Evita comportamiento default
+    event.preventDefault();
+  }
+
+  function handleChange(event) {
+    const value = event.target.value;
+    setState({
+      ...state,
+      [event.target.name]: value,
+    });
+  }
+
   return (
     <div className="App">
 
-    <form className="form-horizontal">
+    <form className="form-horizontal" onSubmit={handleSubmit}>
       <fieldset>
 
       <legend>Gratitude Formal Notice Generator</legend>
 
       <div className="form-group">
-        <label className="col-md-4 control-label" for="recipientText">Recipient</label>  
+        <label className="col-md-4 control-label" htmlFor="recipientText">Recipient</label>  
         <div className="col-md-4">
-        <input id="recipientText" name="recipientText" type="text"  className="form-control input-md" />
+          <input
+            id="recipientText"
+            name="recipient"
+            type="text"
+            className="form-control input-md"
+            value={state.recipient}
+            onChange={handleChange}
+          />
         </div>
       </div>
 
       <div className="form-group">
-        <label className="col-md-4 control-label" for="actionText">Action leading to your gratitude</label>  
+        <label className="col-md-4 control-label" htmlFor="actionText">Action leading to your gratitude</label>  
         <div className="col-md-4">
-        <input id="actionText" name="actionText" type="text"  className="form-control input-md" />
+          <input
+            id="actionText"
+            name="action"
+            type="text" 
+            className="form-control input-md"
+            value={state.action}
+            onChange={handleChange}
+          />
         </div>
       </div>
 
       <div className="form-group">
-        <label className="col-md-4 control-label" for="adjectiveText">Adjective</label>  
+        <label className="col-md-4 control-label" htmlFor="adjectiveText">Adjective</label>  
         <div className="col-md-4">
-        <input id="adjectiveText" name="adjectiveText" type="text"  className="form-control input-md" />
+          <input
+            id="adjectiveText"
+            name="adjective"
+            type="text"
+            className="form-control input-md"
+            value={state.adjective}
+            onChange={handleChange}
+          />
         </div>
       </div>
 
       <div className="form-group">
-        <label className="col-md-4 control-label" for="virtueText">Virtue of quality</label>  
+        <label className="col-md-4 control-label" htmlFor="virtueText">Virtue of quality</label>  
         <div className="col-md-4">
-        <input id="virtueText" name="virtueText" type="text" className="form-control input-md" /> 
+          <input
+            id="virtueText"
+            name="virtue"
+            type="text"
+            className="form-control input-md"
+            value={state.virtue}
+            onChange={handleChange}
+          /> 
         </div>
       </div>
 
       <div className="form-group">
-        <label className="col-md-4 control-label" for="inferiorText">Inferior action</label>  
+        <label className="col-md-4 control-label" htmlFor="inferiorText">Inferior action</label>  
         <div className="col-md-4">
-        <input id="inferiorText" name="inferiorText" type="text"  className="form-control input-md" />
+          <input
+            id="inferiorText"
+            name="inferior"
+            type="text"
+            className="form-control input-md"
+            value={state.inferior}
+            onChange={handleChange}
+          />
         </div>
       </div>
 
       <div className="form-group">
-        <label className="col-md-4 control-label" for="superiorText">Recipient's superior action</label>  
+        <label className="col-md-4 control-label" htmlFor="superiorText">Recipient's superior action</label>  
         <div className="col-md-4">
-        <input id="superiorText" name="superiorText" type="text"  className="form-control input-md" />
+          <input
+            id="superiorText"
+            name="superior"
+            type="text" 
+            className="form-control input-md"
+            value={state.superior}
+            onChange={handleChange}
+          />
         </div>
       </div>
 
       <div className="form-group">
-        <label className="col-md-4 control-label" for="complimentaryText">Complimentary adjective</label>  
+        <label className="col-md-4 control-label" htmlFor="complimentaryText">Complimentary adjective</label>  
         <div className="col-md-4">
-        <input id="complimentaryText" name="complimentaryText" type="text"  className="form-control input-md" />  
+          <input
+            id="complimentaryText"
+            name="complimentary"
+            type="text"
+            className="form-control input-md"
+            value={state.complimentary}
+            onChange={handleChange}
+          />  
         </div>
       </div>
 
       <div className="form-group">
-        <label className="col-md-4 control-label" for="titleText">Title of recipient</label>  
+        <label className="col-md-4 control-label" htmlFor="titleText">Title of recipient</label>  
         <div className="col-md-4">
-        <input id="titleText" name="titleText" type="text" className="form-control input-md" /> 
+          <input
+            id="titleText"
+            name="title"
+            type="text"
+            className="form-control input-md"
+            value={state.title}
+            onChange={handleChange}
+          /> 
         </div>
       </div>
 
       <div className="form-group">
-        <label className="col-md-4 control-label" for="generosityText">Extreme act of generosity</label>  
+        <label className="col-md-4 control-label" htmlFor="generosityText">Extreme act of generosity</label>  
         <div className="col-md-4">
-        <input id="generosityText" name="generosityText" type="text"  className="form-control input-md" />
+          <input
+            id="generosityText"
+            name="generosity"
+            type="text"
+            className="form-control input-md"
+            value={state.generosity}
+            onChange={handleChange}
+          />
         </div>
       </div>
 
       <div className="form-group">
-        <label className="col-md-4 control-label" for="relationshipText">Relationship to recipient</label>  
+        <label className="col-md-4 control-label" htmlFor="relationshipText">Relationship to recipient</label>  
         <div className="col-md-4">
-        <input id="relationshipText" name="relationshipText" type="text"  className="form-control input-md" /> 
+          <input
+            id="relationshipText"
+            name="relationship"
+            type="text"
+            className="form-control input-md"
+            value={state.relationship}
+            onChange={handleChange}
+          /> 
         </div>
       </div>
 
       <div className="form-group">
-        <label className="col-md-4 control-label" for="nameText">Your name</label>  
+        <label className="col-md-4 control-label" htmlFor="myNameText">Your name</label>  
         <div className="col-md-4">
-        <input id="nameText" name="nameText" type="text"  className="form-control input-md" />  
+          <input
+            id="myNameText"
+            name="myName"
+            type="text"
+            className="form-control input-md"
+            value={state.myName}
+            onChange={handleChange}
+          />  
         </div>
       </div>
 
@@ -107,7 +211,7 @@ function App() {
         4057 Basel <br/>    
       </address>
 
-      <time datetime="2012-12-01">01 Dezember, 2012</time>
+      <time dateTime="2012-12-01">01 Dezember, 2012</time>
     </div>
 
     <h1 className="titulo">
