@@ -4,6 +4,100 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+
+    <form className="form-horizontal">
+      <fieldset>
+
+      <legend>Gratitude Formal Notice Generator</legend>
+
+      <div className="form-group">
+        <label className="col-md-4 control-label" for="recipientText">Recipient</label>  
+        <div className="col-md-4">
+        <input id="recipientText" name="recipientText" type="text" placeholder="Recipient" className="form-control input-md" />
+        </div>
+      </div>
+
+      <div className="form-group">
+        <label className="col-md-4 control-label" for="actionText">Action leading to your gratitude</label>  
+        <div className="col-md-4">
+        <input id="actionText" name="actionText" type="text" placeholder="Action leading to your gratitude" className="form-control input-md" />
+        </div>
+      </div>
+
+      <div className="form-group">
+        <label className="col-md-4 control-label" for="adjectiveText">Adjective</label>  
+        <div className="col-md-4">
+        <input id="adjectiveText" name="adjectiveText" type="text" placeholder="Adjective" className="form-control input-md" />
+        </div>
+      </div>
+
+      <div className="form-group">
+        <label className="col-md-4 control-label" for="virtueText">Virtue of quality</label>  
+        <div className="col-md-4">
+        <input id="virtueText" name="virtueText" type="text" placeholder="Virtue of quality" className="form-control input-md" /> 
+        </div>
+      </div>
+
+      <div className="form-group">
+        <label className="col-md-4 control-label" for="inferiorText">Inferior action</label>  
+        <div className="col-md-4">
+        <input id="inferiorText" name="inferiorText" type="text" placeholder="Inferior action" className="form-control input-md" />
+        </div>
+      </div>
+
+      <div className="form-group">
+        <label className="col-md-4 control-label" for="superiorText">Recipient's superior action</label>  
+        <div className="col-md-4">
+        <input id="superiorText" name="superiorText" type="text" placeholder="Recipient's superior action" className="form-control input-md" />
+        </div>
+      </div>
+
+      <div className="form-group">
+        <label className="col-md-4 control-label" for="complimentaryText">Complimentary adjective</label>  
+        <div className="col-md-4">
+        <input id="complimentaryText" name="complimentaryText" type="text" placeholder="Complimentary adjective" className="form-control input-md" />  
+        </div>
+      </div>
+
+      <div className="form-group">
+        <label className="col-md-4 control-label" for="titleText">Title of recipient</label>  
+        <div className="col-md-4">
+        <input id="titleText" name="titleText" type="text" placeholder="Title of recipient" className="form-control input-md" /> 
+        </div>
+      </div>
+
+      <div className="form-group">
+        <label className="col-md-4 control-label" for="generosityText">Extreme act of generosity</label>  
+        <div className="col-md-4">
+        <input id="generosityText" name="generosityText" type="text" placeholder="Extreme act of generosity" className="form-control input-md" />
+        </div>
+      </div>
+
+      <div className="form-group">
+        <label className="col-md-4 control-label" for="relationshipText">Relationship to recipient</label>  
+        <div className="col-md-4">
+        <input id="relationshipText" name="relationshipText" type="text" placeholder="Relationship to recipient" className="form-control input-md" /> 
+        </div>
+      </div>
+
+      <div className="form-group">
+        <label className="col-md-4 control-label" for="nameText">Your name</label>  
+        <div className="col-md-4">
+        <input id="nameText" name="nameText" type="text" placeholder="Your name" className="form-control input-md" />  
+        </div>
+      </div>
+
+      <div className="div-generate">
+        <button type="submit" id="button-generate">Generate</button>
+      </div>
+
+      <div className="div-reset">
+        <button type="submit" id="button-reset">Reset</button>
+      </div>
+
+      </fieldset>
+    </form>
+
       <div className="headLeatter"> 
       <address className="return-address">
         Lopes de Almeido, Evanildo<br/>
