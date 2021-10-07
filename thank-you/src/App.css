@@ -1,13 +1,11 @@
-.App {
-  text-align: center;
-}
 
 
 body {
   background-color: #dfdfde;
   margin: 10px;
   font-size: 1.50em;
-  color: #83516c;
+  color: #d7aac2;
+  margin: 50px;
 
 }
 
@@ -18,7 +16,7 @@ input {
 }
 
 .titulo{
-  color: #a2798f;
+  color:  #8caba8;
   display:  flex;
 flex-direction: row;
 
@@ -45,4 +43,42 @@ h1 {
 .adios {
   float: right;
   padding-top: 50px;
+}
+
+
+fieldset{
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+
+}
+
+legend{
+  color:  #8caba8;
+ font-family: 'Cinzel Decorative', cursive;
+ font-size: 1.8em;
+}
+
+.input-md {
+  font-family: 'Raleway', sans-serif;
+  color: #6fd2dc;
+
+}
+
+.botones{
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+button{
+  background-color: #9fd4cf;
+ color: #0b5750;
+ height: 40px;
+ border-radius: 10%;
+
 }
