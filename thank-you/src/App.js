@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import html2canvas from 'html2canvas';
 import './App.css';
 
@@ -17,12 +17,13 @@ function App() {
     myName: "",
   });
 
-  const letterRef = React.createRef();
-  const screenshotRef = React.createRef();
+  const letterRef = useRef();
+  const screenshotRef = useRef();
 
   const [defaultForm, setDefaultForm] = useState(state);
   const [carta, setCarta] = useState(state);
   const [read, setRead] = useState(false);
+  const [screen, setScreen] = useState(false);
   const [status, setStatus] = useState("inital");
 
   const recipientArr = ["Eugenia", "Mariah", "Clair", "Edith", "Nicolas", "Tamela", "Palmer", "Emmanuel", "Terrance", "Jerome"];
@@ -47,6 +48,7 @@ function App() {
     setCarta(state);
     setRead(true);
     setStatus("complete");
+    setScreen(false);
   }
   
   function handleReset(event) {
@@ -55,6 +57,7 @@ function App() {
     setState(defaultForm);
     setRead(false);
     setStatus("initial");
+    setScreen(false);
   }
 
   function handleChange(event) {
@@ -85,9 +88,12 @@ function App() {
   }
 
   function handlePrint(event) {
-    html2canvas(document.body).then(function(canvas) {
-      document.body.appendChild(canvas);
-    })
+    if(status === "complete") {
+      setScreen(true);
+      html2canvas(letterRef.current).then(function(canvas) {
+        screenshotRef.current.appendChild(canvas);
+      });
+    }
   }
 
   return (
@@ -290,16 +296,16 @@ function App() {
           <button type="button" id="button-print" onClick={handlePrint}>Print</button>
         </div>
       </div>
-
-      <div className="div-screenshot" ref={screenshotRef}>
-
-      </div>
-
       </fieldset>
     </form>
 
-    {status === "complete" && <div className="fullLetter" ref={letterRef}>
-      <div className="headLeatter"> 
+    {screen === true &&<div className="div-screenshot" ref={screenshotRef}>
+      <h1>Screenshot</h1>
+
+    </div>}
+
+    {status === "complete" && <div className="fullLetter" ref={letterRef}> 
+      <div className="headLetter"> 
         <time dateTime="2012-12-01">01 Dezember, 2012</time>
       </div>
 
@@ -307,7 +313,7 @@ function App() {
         Statement of Gratitude
       </h1>
 
-      <div className="content"> {/* use this div only if it is required for styling */}
+      <div className="content">
         <p>
           Dear {carta.recipient},
           <br className="salution" />
