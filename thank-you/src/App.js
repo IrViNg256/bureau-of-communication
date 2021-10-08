@@ -283,12 +283,6 @@ function App() {
 
     {status === "complete" && <React.Fragment>
       <div className="headLeatter"> 
-        <address className="return-address">
-          Lopes de Almeido, Evanildo<br/>
-          Bläsiring 161 <br/>
-          4057 Basel <br/>    
-        </address>
-
         <time dateTime="2012-12-01">01 Dezember, 2012</time>
       </div>
 
@@ -312,8 +306,7 @@ function App() {
       <p className="adios">
         Sincerely, your {carta.relationship},
         <br className="greets" />
-        {carta.myName} <br/>
-        Hauswart Binningerstrasse 19/23
+        {carta.myName}
       </p>
     </React.Fragment>}
     </div>
