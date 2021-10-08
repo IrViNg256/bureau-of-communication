@@ -16,9 +16,12 @@ function App() {
     myName: "",
   });
 
+  const [carta, setCarta] = useState("");
+
   function handleSubmit(event) {
     // Evita comportamiento default
     event.preventDefault();
+    setCarta(state)
   }
 
   function handleChange(event) {
@@ -220,21 +223,21 @@ function App() {
 
     <div className="content"> {/* use this div only if it is required for styling */}
         <p>
-          Dear <input type="text" />,
+          Dear {carta.recipient},
           <br className="salution" />
 
-          I wish to take a moment to properly thank you for <input type="text" />. You should know that
-          I am <input type="text" /> grateful. Your action shows a most remarkable level of <input type="text" />.
-          While lesser individuals would have merely <input type="text" />, you chose to <input type="text" />. I am
-          honored to have such a <input type="text" /> human being as a <input type="text" />. To express the true
-          extent of my appreciation, I would have to <input type="text" />. Well done!
+          I wish to take a moment to properly thank you for {carta.action}. You should know that
+          I am {carta.adjective} grateful. Your action shows a most remarkable level of {carta.virtue}.
+          While lesser individuals would have merely {carta.inferior}, you chose to {carta.superior}. I am
+          honored to have such a {carta.complimentary} human being as a {carta.title}. To express the true
+          extent of my appreciation, I would have to {carta.generosity}. Well done!
         </p>
       </div>
 
       <p className="adios">
-        Sincerely, your <input type="text" />,
+        Sincerely, your {carta.relationship},
         <br className="greets" />
-        <input type="text" /> <br/>
+        {carta.myName} <br/>
         Hauswart Binningerstrasse 19/23
       </p>
     </div>
