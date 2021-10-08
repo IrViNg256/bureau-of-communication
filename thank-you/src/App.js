@@ -16,12 +16,22 @@ function App() {
     myName: "",
   });
 
-  const [carta, setCarta] = useState("");
+  const [defaultForm, setDefaultForm] = useState(state);
+  const [carta, setCarta] = useState(state);
+  const [read, setRead] = useState(false);
 
   function handleSubmit(event) {
     // Evita comportamiento default
     event.preventDefault();
-    setCarta(state)
+    setCarta(state);
+    setRead(true);
+  }
+  
+  function handleReset(event) {
+    event.preventDefault();
+    setCarta(defaultForm);
+    setState(defaultForm);
+    setRead(false);
   }
 
   function handleChange(event) {
@@ -50,6 +60,7 @@ function App() {
             className="form-control input-md"
             value={state.recipient}
             onChange={handleChange}
+            readOnly={read}
           />
         </div>
       </div>
@@ -64,6 +75,7 @@ function App() {
             className="form-control input-md"
             value={state.action}
             onChange={handleChange}
+            readOnly={read}
           />
         </div>
       </div>
@@ -78,6 +90,7 @@ function App() {
             className="form-control input-md"
             value={state.adjective}
             onChange={handleChange}
+            readOnly={read}
           />
         </div>
       </div>
@@ -92,6 +105,7 @@ function App() {
             className="form-control input-md"
             value={state.virtue}
             onChange={handleChange}
+            readOnly={read}
           /> 
         </div>
       </div>
@@ -106,6 +120,7 @@ function App() {
             className="form-control input-md"
             value={state.inferior}
             onChange={handleChange}
+            readOnly={read}
           />
         </div>
       </div>
@@ -120,6 +135,7 @@ function App() {
             className="form-control input-md"
             value={state.superior}
             onChange={handleChange}
+            readOnly={read}
           />
         </div>
       </div>
@@ -134,6 +150,7 @@ function App() {
             className="form-control input-md"
             value={state.complimentary}
             onChange={handleChange}
+            readOnly={read}
           />  
         </div>
       </div>
@@ -148,6 +165,7 @@ function App() {
             className="form-control input-md"
             value={state.title}
             onChange={handleChange}
+            readOnly={read}
           /> 
         </div>
       </div>
@@ -162,6 +180,7 @@ function App() {
             className="form-control input-md"
             value={state.generosity}
             onChange={handleChange}
+            readOnly={read}
           />
         </div>
       </div>
@@ -176,6 +195,7 @@ function App() {
             className="form-control input-md"
             value={state.relationship}
             onChange={handleChange}
+            readOnly={read}
           /> 
         </div>
       </div>
@@ -190,6 +210,7 @@ function App() {
             className="form-control input-md"
             value={state.myName}
             onChange={handleChange}
+            readOnly={read}
           />  
         </div>
       </div>
@@ -200,7 +221,7 @@ function App() {
         </div>
 
         <div className="div-reset">
-          <button type="submit" id="button-reset">Reset</button>
+          <button type="submit" id="button-reset" onClick={handleReset}>Reset</button>
         </div>
       </div>
 
