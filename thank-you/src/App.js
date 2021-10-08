@@ -65,6 +65,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
+          <span class="help-block">help</span>
         </div>
       </div>
 
@@ -80,6 +81,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
+          <span class="help-block">help</span>
         </div>
       </div>
 
@@ -95,6 +97,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
+          <span class="help-block">help</span>
         </div>
       </div>
 
@@ -109,7 +112,8 @@ function App() {
             value={state.virtue}
             onChange={handleChange}
             readOnly={read}
-          /> 
+          />
+          <span class="help-block">help</span>
         </div>
       </div>
 
@@ -125,6 +129,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
+          <span class="help-block">help</span>
         </div>
       </div>
 
@@ -140,6 +145,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
+          <span class="help-block">help</span>
         </div>
       </div>
 
@@ -154,7 +160,8 @@ function App() {
             value={state.complimentary}
             onChange={handleChange}
             readOnly={read}
-          />  
+          />
+          <span class="help-block">help</span>
         </div>
       </div>
 
@@ -169,7 +176,8 @@ function App() {
             value={state.title}
             onChange={handleChange}
             readOnly={read}
-          /> 
+          />
+          <span class="help-block">help</span>
         </div>
       </div>
 
@@ -185,6 +193,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
+          <span class="help-block">help</span>
         </div>
       </div>
 
@@ -199,7 +208,8 @@ function App() {
             value={state.relationship}
             onChange={handleChange}
             readOnly={read}
-          /> 
+          />
+          <span class="help-block">help</span>
         </div>
       </div>
 
@@ -214,7 +224,8 @@ function App() {
             value={state.myName}
             onChange={handleChange}
             readOnly={read}
-          />  
+          />
+          <span class="help-block">help</span> 
         </div>
       </div>
 
