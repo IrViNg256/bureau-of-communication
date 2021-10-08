@@ -21,6 +21,18 @@ function App() {
   const [read, setRead] = useState(false);
   const [status, setStatus] = useState("inital");
 
+  const recipientArr = ["Eugenia", "Mariah", "Clair", "Edith", "Nicolas", "Tamela", "Palmer", "Emmanuel", "Terrance", "Jerome"];
+  const actionArr = ["getting my computer", "eating my new doggy", "buying me a piggy", "eating my fried chicken", "making a safe party", "running into a cow", "bringing me an empty bag of Takis", "burning my garden", "using my socks", "eating my last cookie"];
+  const adjectiveArr = ["accurately", "deeply", "noiseless", "cheaply", "excited and", "frightened and", "violently", "acceptable", "smelly", "sneaky"];
+  const virtueArr = ["patience", "determination", "spontaneity", "flexibility", "kindness", "loyalty", "bravery", "kindness", "peacefullness", "caution"];
+  const inferiorArr = ["run away", "fallen asleep", "eaten a taco", "sat", "bought a cake", "stolen my cat", "made a website", "jumped off my roof", "eaten in my pool", "prepared some quesadillas"];
+  const superiorArr = ["boil my Oreo", "shoot my pots", "exercise at my kitchen", "baptize my cat", "install Doom on my calculator", "feed my gnomes", "listen to MCR", "sue me", "taste my brownies", "steal my car"];
+  const complimentaryArr = ["dull", "simple", "mean", "well-groomed", "shocking", "smart", "chilly", "magestic", "healthy", "purple"];
+  const titleArr = ["friend", "enemy", "sworn brother", "ally", "parent", "teacher", "lawyer", "pet", "mechanic", "butler"];
+  const generosityArr = ["scream at your house", "collect coins in Super Mario for you", "depart to another country", "kick your neighbour's door", "copy your style", "buy you nuggets", "freeze your smartphone", "defeat Dracula for you", "elect you as my president", "laugh at all your jokes"];
+  const relationshipArr = ["friend", "enemy", "sworn brother", "ally", "parent", "teacher", "lawyer", "pet", "mechanic", "butler"];
+  const myNameArr = ["Moises", "Beverly", "Corina", "Tod", "Milford", "Febe", "Louis", "Marcelino", "Ashley", "Cyrus"];
+
   function handleSubmit(event) {
     // Evita comportamiento default
     event.preventDefault();
@@ -43,6 +55,27 @@ function App() {
       ...state,
       [event.target.name]: value,
     });
+  }
+
+  function handleRandom(event) {
+    setCarta({
+      recipient: formRNG(recipientArr),
+      action: formRNG(actionArr),
+      adjective: formRNG(adjectiveArr),
+      virtue: formRNG(virtueArr),
+      inferior: formRNG(inferiorArr),
+      superior: formRNG(superiorArr),
+      complimentary: formRNG(complimentaryArr),
+      title: formRNG(titleArr),
+      generosity: formRNG(generosityArr),
+      relationship: formRNG(relationshipArr),
+      myName: formRNG(myNameArr),
+    });
+    setStatus("complete");
+  }
+
+  function formRNG(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
   }
 
   return (
@@ -235,7 +268,11 @@ function App() {
         </div>
 
         <div className="div-reset">
-          <button type="submit" id="button-reset" onClick={handleReset}>Reset</button>
+          <button type="reset" id="button-reset" onClick={handleReset}>Reset</button>
+        </div>
+
+        <div className="div-random">
+          <button type="button" id="button-random" onClick={handleRandom}>Random</button>
         </div>
       </div>
 
