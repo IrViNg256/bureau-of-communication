@@ -58,7 +58,9 @@ function App() {
   }
 
   function handleRandom(event) {
-    setCarta({
+    setCarta(defaultForm);
+    setRead(false);
+    setState({
       recipient: formRNG(recipientArr),
       action: formRNG(actionArr),
       adjective: formRNG(adjectiveArr),
@@ -71,7 +73,7 @@ function App() {
       relationship: formRNG(relationshipArr),
       myName: formRNG(myNameArr),
     });
-    setStatus("complete");
+    setStatus("initial");
   }
 
   function formRNG(arr) {
