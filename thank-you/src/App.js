@@ -19,12 +19,14 @@ function App() {
   const [defaultForm, setDefaultForm] = useState(state);
   const [carta, setCarta] = useState(state);
   const [read, setRead] = useState(false);
+  const [status, setStatus] = useState("inital");
 
   function handleSubmit(event) {
     // Evita comportamiento default
     event.preventDefault();
     setCarta(state);
     setRead(true);
+    setStatus("complete");
   }
   
   function handleReset(event) {
@@ -32,6 +34,7 @@ function App() {
     setCarta(defaultForm);
     setState(defaultForm);
     setRead(false);
+    setStatus("initial");
   }
 
   function handleChange(event) {
@@ -228,21 +231,22 @@ function App() {
       </fieldset>
     </form>
 
+    {status === "complete" && <React.Fragment>
       <div className="headLeatter"> 
-      <address className="return-address">
-        Lopes de Almeido, Evanildo<br/>
-        Bläsiring 161 <br/>
-        4057 Basel <br/>    
-      </address>
+        <address className="return-address">
+          Lopes de Almeido, Evanildo<br/>
+          Bläsiring 161 <br/>
+          4057 Basel <br/>    
+        </address>
 
-      <time dateTime="2012-12-01">01 Dezember, 2012</time>
-    </div>
+        <time dateTime="2012-12-01">01 Dezember, 2012</time>
+      </div>
 
-    <h1 className="titulo">
-      Statement of Gratitude
-    </h1>
+      <h1 className="titulo">
+        Statement of Gratitude
+      </h1>
 
-    <div className="content"> {/* use this div only if it is required for styling */}
+      <div className="content"> {/* use this div only if it is required for styling */}
         <p>
           Dear {carta.recipient},
           <br className="salution" />
@@ -261,6 +265,7 @@ function App() {
         {carta.myName} <br/>
         Hauswart Binningerstrasse 19/23
       </p>
+    </React.Fragment>}
     </div>
   );
 }
