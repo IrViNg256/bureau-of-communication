@@ -33,6 +33,10 @@ function App() {
   const relationshipArr = ["friend", "enemy", "sworn brother", "ally", "parent", "teacher", "lawyer", "pet", "mechanic", "butler"];
   const myNameArr = ["Moises", "Beverly", "Corina", "Tod", "Milford", "Febe", "Louis", "Marcelino", "Ashley", "Cyrus"];
 
+  function formRNG(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
   function handleSubmit(event) {
     // Evita comportamiento default
     event.preventDefault();
@@ -76,8 +80,8 @@ function App() {
     setStatus("initial");
   }
 
-  function formRNG(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
+  function handlePrint(event) {
+
   }
 
   return (
@@ -276,6 +280,10 @@ function App() {
         <div className="div-random">
           <button type="button" id="button-random" onClick={handleRandom}>Random</button>
         </div>
+
+        <div className="div-print">
+          <button type="button" id="button-print" onClick={handlePrint}>Print</button>
+        </div>
       </div>
 
       </fieldset>
@@ -308,6 +316,7 @@ function App() {
         <br className="greets" />
         {carta.myName}
       </p>
+
     </React.Fragment>}
     </div>
   );
