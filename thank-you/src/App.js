@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import html2canvas from 'html2canvas';
 import './App.css';
 
 function App() {
@@ -15,6 +16,9 @@ function App() {
     relationship: "",
     myName: "",
   });
+
+  const letterRef = React.createRef();
+  const screenshotRef = React.createRef();
 
   const [defaultForm, setDefaultForm] = useState(state);
   const [carta, setCarta] = useState(state);
@@ -81,12 +85,13 @@ function App() {
   }
 
   function handlePrint(event) {
-
+    html2canvas(document.body).then(function(canvas) {
+      document.body.appendChild(canvas);
+    })
   }
 
   return (
     <div className="App">
-
     <form className="form-horizontal" onSubmit={handleSubmit}>
       <fieldset>
 
@@ -104,7 +109,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span class="help-block">help</span>
+          <span className="help-block">help</span>
         </div>
       </div>
 
@@ -120,7 +125,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span class="help-block">help</span>
+          <span className="help-block">help</span>
         </div>
       </div>
 
@@ -136,7 +141,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span class="help-block">help</span>
+          <span className="help-block">help</span>
         </div>
       </div>
 
@@ -152,7 +157,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span class="help-block">help</span>
+          <span className="help-block">help</span>
         </div>
       </div>
 
@@ -168,7 +173,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span class="help-block">help</span>
+          <span className="help-block">help</span>
         </div>
       </div>
 
@@ -184,7 +189,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span class="help-block">help</span>
+          <span className="help-block">help</span>
         </div>
       </div>
 
@@ -200,7 +205,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span class="help-block">help</span>
+          <span className="help-block">help</span>
         </div>
       </div>
 
@@ -216,7 +221,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span class="help-block">help</span>
+          <span className="help-block">help</span>
         </div>
       </div>
 
@@ -232,7 +237,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span class="help-block">help</span>
+          <span className="help-block">help</span>
         </div>
       </div>
 
@@ -248,7 +253,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span class="help-block">help</span>
+          <span className="help-block">help</span>
         </div>
       </div>
 
@@ -264,7 +269,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span class="help-block">help</span> 
+          <span className="help-block">help</span> 
         </div>
       </div>
 
@@ -286,10 +291,14 @@ function App() {
         </div>
       </div>
 
+      <div className="div-screenshot" ref={screenshotRef}>
+
+      </div>
+
       </fieldset>
     </form>
 
-    {status === "complete" && <React.Fragment>
+    {status === "complete" && <div className="fullLetter" ref={letterRef}>
       <div className="headLeatter"> 
         <time dateTime="2012-12-01">01 Dezember, 2012</time>
       </div>
@@ -316,8 +325,7 @@ function App() {
         <br className="greets" />
         {carta.myName}
       </p>
-
-    </React.Fragment>}
+    </div>}
     </div>
   );
 }
