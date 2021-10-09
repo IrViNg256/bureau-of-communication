@@ -38,6 +38,17 @@ function App() {
   const relationshipArr = ["friend", "enemy", "sworn brother", "ally", "parent", "teacher", "lawyer", "pet", "mechanic", "butler"];
   const myNameArr = ["Moises", "Beverly", "Corina", "Tod", "Milford", "Febe", "Louis", "Marcelino", "Ashley", "Cyrus"];
 
+  function isEmpty() {
+    const arr = Object.keys(state).map((propiedad) => state[propiedad]);
+    for (let i = 0; i < arr.length; i++)
+    {
+      if(arr[i] === "") {
+        return true;
+      }
+    }
+    return false;
+  }
+
   function formRNG(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
   }
@@ -45,19 +56,23 @@ function App() {
   function handleSubmit(event) {
     // Evita comportamiento default
     event.preventDefault();
-    setCarta(state);
-    setRead(true);
-    setStatus("complete");
-    setScreen(false);
+    if(isEmpty()) {
+      alert("¡Ingresa todos los campos!");
+    } else {
+      setCarta(state);
+      setRead(true);
+      setStatus("complete");
+      setScreen(false);
+    }
   }
   
   function handleReset(event) {
-    event.preventDefault();
-    setCarta(defaultForm);
-    setState(defaultForm);
-    setRead(false);
-    setStatus("initial");
-    setScreen(false);
+      event.preventDefault();
+      setCarta(defaultForm);
+      setState(defaultForm);
+      setRead(false);
+      setStatus("initial");
+      setScreen(false);
   }
 
   function handleChange(event) {
@@ -93,6 +108,8 @@ function App() {
       html2canvas(letterRef.current).then(function(canvas) {
         screenshotRef.current.appendChild(canvas);
       });
+    } else {
+      alert("¡No hay carta para imprimir!")
     }
   }
 
