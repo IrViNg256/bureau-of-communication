@@ -3,8 +3,7 @@
 body {
   background-color: #dfdfde;
   margin: 10px;
-  font-size: 1.50em;
-  color: #d7aac2;
+   color: #d7aac2;
   margin: 50px;
 
 }
@@ -40,16 +39,14 @@ h1 {
   padding-top: 80px;
 }
 
-fieldset{
-  height: 500px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  text-align: center;
 
+label{
+   font-size: 1.2em;
+color:  #8caba8;
 }
 
 legend{
+  text-align: center;
   color:  #8caba8;
  font-family: 'Cinzel Decorative', cursive;
  font-size: 1.8em;
@@ -64,7 +61,7 @@ legend{
 .botones{
   margin-top: 20px;
   display: flex;
-  flex-wrap: wrap;
+ 
   flex-direction: row;
   justify-content: space-around;
 }
@@ -76,3 +73,47 @@ button{
  border-radius: 10%;
 
 }
+
+.grupo1{
+display: flex;
+flex-direction: column;
+justify-content: center; 
+
+}
+
+
+.forma{
+  display: flex;
+flex-direction: row;
+
+}
+
+
+.help-block{
+  font-size: 1em;
+
+
+}
+/*
+.form-group{
+  display: flex;
+  flex-direction:column;
+   justify-content: space-between;
+   text-align: center;
+}
+
+.help-block{
+ 
+  display: flex;
+  flex-direction: column;
+   justify-content: space-between;
+   text-align: center;
+
+}
+
+.col-md-4{
+ display: flex; 
+ text-align: center; 
+
+}
+*/

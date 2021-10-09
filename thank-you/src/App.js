@@ -119,7 +119,8 @@ function App() {
       <fieldset>
 
       <legend>Gratitude Formal Notice Generator</legend>
-
+      <div className="forma">
+      <div className="grupo1">
       <div className="form-group">
         <label className="col-md-4 control-label" htmlFor="recipientText">Recipient</label>  
         <div className="col-md-4">
@@ -132,7 +133,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span className="help-block">help</span>
+          <p className="help-block">Who is the letter addressed to?</p>
         </div>
       </div>
 
@@ -148,7 +149,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span className="help-block">help</span>
+          <p className="help-block">What did the person do for you to be gratefull?</p>
         </div>
       </div>
 
@@ -164,7 +165,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span className="help-block">help</span>
+          <p className="help-block">What adjective could describe why you are grateful?</p>
         </div>
       </div>
 
@@ -180,9 +181,11 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span className="help-block">help</span>
+          <p className="help-block">What adjective could describe the actions of the person?</p>
         </div>
-      </div>
+      </div>   </div>
+
+         <div className="grupo1">
 
       <div className="form-group">
         <label className="col-md-4 control-label" htmlFor="inferiorText">Inferior action</label>  
@@ -196,7 +199,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span className="help-block">help</span>
+          <p className="help-block">What was the minimum action the person could have done?</p>
         </div>
       </div>
 
@@ -212,9 +215,12 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span className="help-block">help</span>
+          <p className="help-block">What action the person did for you to be gratefull?</p>
         </div>
       </div>
+    
+
+    
 
       <div className="form-group">
         <label className="col-md-4 control-label" htmlFor="complimentaryText">Complimentary adjective</label>  
@@ -228,7 +234,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span className="help-block">help</span>
+          <p className="help-block">What adjective could describe the person?</p>
         </div>
       </div>
 
@@ -244,9 +250,11 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span className="help-block">help</span>
+          <p className="help-block">What does that person mean to you?</p>
         </div>
-      </div>
+      </div> </div>
+
+         <div className="grupo1">
 
       <div className="form-group">
         <label className="col-md-4 control-label" htmlFor="generosityText">Extreme act of generosity</label>  
@@ -260,7 +268,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span className="help-block">help</span>
+          <p className="help-block">What are you going to do to show you are grateful?</p>
         </div>
       </div>
 
@@ -276,7 +284,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span className="help-block">help</span>
+          <p className="help-block">What is your relationship with that person?</p>
         </div>
       </div>
 
@@ -292,7 +300,7 @@ function App() {
             onChange={handleChange}
             readOnly={read}
           />
-          <span className="help-block">help</span> 
+          <p className="help-block">Whats your name?</p> 
         </div>
       </div>
 
@@ -313,6 +321,7 @@ function App() {
           <button type="button" id="button-print" onClick={handlePrint}>Print</button>
         </div>
       </div>
+       </div>  </div>  
       </fieldset>
     </form>
 
