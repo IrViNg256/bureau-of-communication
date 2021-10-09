@@ -300,15 +300,11 @@ function App() {
     </form>
 
     {screen === true &&<div className="div-screenshot" ref={screenshotRef}>
-      <h1>Screenshot</h1>
+      <h2>Screenshot</h2>
 
     </div>}
 
     {status === "complete" && <div className="fullLetter" ref={letterRef}> 
-      <div className="headLetter"> 
-        <time dateTime="2012-12-01">01 Dezember, 2012</time>
-      </div>
-
       <h1 className="titulo">
         Statement of Gratitude
       </h1>

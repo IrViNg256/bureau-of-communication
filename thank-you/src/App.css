@@ -40,12 +40,6 @@ h1 {
   padding-top: 80px;
 }
 
-.adios {
-  float: right;
-  padding-top: 50px;
-}
-
-
 fieldset{
   height: 500px;
   display: flex;
